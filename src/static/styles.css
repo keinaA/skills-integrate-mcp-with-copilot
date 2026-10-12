@@ -16,12 +16,44 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.teacher-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.teacher-controls p {
+  font-size: 14px;
+}
+
+#login-form {
+  position: absolute;
+  z-index: 1;
+  top: 45px;
+  right: 0;
+  width: min(280px, calc(100vw - 64px));
+  padding: 16px;
+  color: #333;
+  text-align: left;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#login-form .form-group {
+  margin-bottom: 10px;
 }
 
 header h1 {
@@ -33,6 +65,12 @@ main {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+}
+
+main > .message {
+  flex: 1 0 100%;
+  width: 100%;
+  max-width: 1030px;
 }
 
 @media (min-width: 768px) {
@@ -164,6 +202,10 @@ button:hover {
   background-color: #3949ab;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -197,4 +239,20 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 64px 16px 20px;
+  }
+
+  .teacher-controls {
+    top: 10px;
+    right: 10px;
+  }
+
+  .teacher-controls p {
+    max-width: 130px;
+    overflow-wrap: anywhere;
+  }
 }
